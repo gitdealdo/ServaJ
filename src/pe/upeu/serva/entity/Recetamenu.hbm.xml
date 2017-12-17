@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01/05/2017 02:26:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.upeu.serva.entity.Recetamenu" table="recetamenu" catalog="servadb" optimistic-lock="version">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="menu" class="pe.upeu.serva.entity.Menu" fetch="select">
+            <column name="menu" />
+        </many-to-one>
+        <many-to-one name="receta" class="pe.upeu.serva.entity.Receta" fetch="select">
+            <column name="receta" />
+        </many-to-one>
+        <many-to-one name="usuario" class="pe.upeu.serva.entity.Usuario" fetch="select">
+            <column name="usuario" />
+        </many-to-one>
+        <property name="porcion" type="java.lang.Integer">
+            <column name="porcion" />
+        </property>
+        <property name="costo" type="java.lang.Double">
+            <column name="costo" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 01/05/2017 02:26:18 PM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="pe.upeu.serva.entity.Producto" table="producto" catalog="servadb" optimistic-lock="version">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="categoria" class="pe.upeu.serva.entity.Categoria" fetch="select">
+            <column name="categoria" />
+        </many-to-one>
+        <many-to-one name="unidad" class="pe.upeu.serva.entity.Unidad" fetch="select">
+            <column name="unidad" />
+        </many-to-one>
+        <property name="nombre" type="string">
+            <column name="nombre" length="30" />
+        </property>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="150" />
+        </property>
+        <property name="cantidad" type="java.lang.Double">
+            <column name="cantidad" precision="22" scale="0" />
+        </property>
+        <property name="costo" type="java.lang.Double">
+            <column name="costo" precision="22" scale="0" />
+        </property>
+        <set name="ingredientes" table="ingrediente" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="producto" />
+            </key>
+            <one-to-many class="pe.upeu.serva.entity.Ingrediente" />
+        </set>
+    </class>
+</hibernate-mapping>

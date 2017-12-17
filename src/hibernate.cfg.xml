@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/servadb?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password"></property>
+    <mapping resource="pe/upeu/serva/entity/Tipomenu.hbm.xml"/>
+    <mapping resource="pe/upeu/serva/entity/Producto.hbm.xml"/>
+    <mapping resource="pe/upeu/serva/entity/Recetamenu.hbm.xml"/>
+    <mapping resource="pe/upeu/serva/entity/Menu.hbm.xml"/>
+    <mapping resource="pe/upeu/serva/entity/Categoria.hbm.xml"/>
+    <mapping resource="pe/upeu/serva/entity/Receta.hbm.xml"/>
+    <mapping resource="pe/upeu/serva/entity/Unidad.hbm.xml"/>
+    <mapping resource="pe/upeu/serva/entity/Usuario.hbm.xml"/>
+    <mapping resource="pe/upeu/serva/entity/Ingrediente.hbm.xml"/>
+    <mapping resource="pe/upeu/serva/entity/Item.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>
